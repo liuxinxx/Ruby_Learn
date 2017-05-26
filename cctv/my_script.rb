@@ -24,7 +24,7 @@ class CCTV
       end
       if flag ==1 and str.size <200 and str.size > 3
         n+=1
-        file_name.syswrite(str.gsub("　　", "\r\n").gsub("　"," ")+"\r\n")
+        file_name.syswrite(str.gsub("　　", "\r\n").gsub("　", " ")+"\r\n")
       end
     }
   end
@@ -51,16 +51,17 @@ def to_csv(file_uri)
       str = $&+"奖"
       next
     end
-    print line.gsub(" ",",") +","+y+","+str
+    print line.gsub(" ", ",") +","+y+","+str
     puts
   }
   file.close()
   File.delete(file)
 end
+
 url = 'http://baike.baidu.com/link?url=2gzjqKgV5jWwt1hgmnV2SGhZNRCvWe5YZILghUifduaFJSo2pK5HrEW0xJDbYUkCxrvY4ZMJYajW3OMChxnZd0BmcBunE4i3-VPmapz3Hp77f0niuo6Igv-X0C3rZznTJyKIBcdKMCzwPGXiwVPFFI6cNvlNB5OUYjpx-kNHqfZaWTPJS8lzurD4NfpZWoZN#3'
 cctv = CCTV.new
 doc = cctv.dow_html(url)
 file_uri = '/media/liuxin/python/Ruby/RubymineProjects/12.txt'
 file= File.new(file_uri, "a+")
-cctv.jiexi_to_hxt(doc,file)
+cctv.jiexi_to_hxt(doc, file)
 to_csv(file_uri)
