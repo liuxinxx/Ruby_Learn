@@ -23,7 +23,6 @@ class DOW
     b = Watir::Browser.new(:chrome)
     # b = Watir::Browser.new(:phantomjs)
     b.goto(url)
-    # b.close()
     return  b.html
   end
   def download_proxy(url)
