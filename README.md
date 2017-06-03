@@ -8,3 +8,4 @@
 	* 目前的问题是打开网页超时，正在解决中。。。
 * [/luxun/lx.rb](https://github.com/myvary/Ruby_Learn/blob/master/luxun/lx.rb)历届鲁迅文学奖
 * [/meihuajiang/mx.rb](https://github.com/myvary/Ruby_Learn/blob/master/meihuajiang/mx.rb)历届梅花奖
+* [/jinzhongjiang/jz.rb](https://github.com/myvary/Ruby_Learn/blob/master/jinzhongjiang/jz.rb)历届金钟奖
