@@ -10,12 +10,10 @@ class DOW
     begin
       agent = Mechanize.new
       agent.user_agent_alias = "Linux Mozilla"
-       html = agent.get(url)
+      html = agent.get(url)
       return html
     rescue Exception=> e
       puts "出现异常:"+e.message
-      puts e.backtrace
-      puts e.class
       return "0"
     end
   end
