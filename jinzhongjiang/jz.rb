@@ -14,9 +14,22 @@ def infobox(html, pc)
   html.xpath("//table[@class='infobox vevent']/tr").each do |tr|
     td =tr.content.split(" ")
     if info[td[0]]
+      if td[0]=='主办方'
+        df=td[1].to_s+td[2].to_s+td[3].to_s+td[4].to_s
+        if df.include?('(')
+          info[td[0]]=df.gsub('(','“').gsub(')','”')
+        else
+          info[td[0]] = '“'+df+'”'
+        end
+      elsif td[0] =="主持人"
+        df=td[1].to_s+td[2].to_s+td[3].to_s+td[4].to_s
+        info[td[0]] = df.gsub('(','(“').gsub(')','”)')
+      else
       info[td[0]] = td[1].to_s+td[2].to_s+td[3].to_s+td[4].to_s
+      end
     end
   end
+  info["国家或地区"]='中国台湾'
   return info
 end
 
@@ -170,23 +183,23 @@ def jiexi(html, file, infobox)
     end
   end
 end
-file1 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/j-1.csv", 'a+')
-file2 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/j-2.csv", 'a+')
-file3 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/j-3.csv", 'a+')
-file4 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/j-4.csv", 'a+')
+file1 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/zjs-1.csv", 'a+')
+file2 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/zjs-2.csv", 'a+')
+file3 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/zjs-3.csv", 'a+')
+file4 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/zjs-4.csv", 'a+')
 (1..51).each do |n|
   url = 'https://zh.wikipedia.org/zh-cn/'
   str = '第'+n.to_s+'屆金鐘獎'
   final_url = URI::escape(url+str) #中文url转换
   dow = DOW.new
   html = dow.download_html(final_url)
-  pc = n.to_s+'届'
+  pc = '第'+n.to_s+'届'
   infobox = infobox(html, pc)
   if n <26
     jiexi(html, file1, infobox)
-  elsif n <36
+  elsif n <41
     jiexi(html, file2, infobox)
-  elsif n <43
+  elsif n <47
     jiexi(html, file3, infobox)
   else
     jiexi(html, file4, infobox)
