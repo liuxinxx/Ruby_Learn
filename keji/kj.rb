@@ -65,12 +65,18 @@ class KJ
 end
 
 kj = KJ.new
-# url = 'http://www.most.gov.cn/cxfw/kjjlcx/index.htm'
-#   kj.main_url(url).each {|key, value|
-#     p key, value
-#     file = File.new("/media/liuxin/python/Ruby/RubymineProjects/jiang/"+key+".csv", 'a+')
-#     kj.jiexi(value, file)
-#   }
+url = 'http://www.most.gov.cn/cxfw/kjjlcx/index.htm'
+  kj.main_url(url).each {|key, value|
+    url='file://'
+    p key, value
+    dow = DOW.new
+    html = dow.download_html(value)
+    if html!="0"
+    file = File.new("/media/liuxin/python/Ruby/RubymineProjects/jiang/"+key+".html", 'a+')
+    # kj.jiexi(value, file)
+    file.syswrite(html.body)
+    end
+  }
 
 # 2001国家技术发明奖
 # url = "http://www.most.gov.cn/cxfw/kjjlcx/kjjl2001/200802/t20080214_59033.htm"
