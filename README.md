@@ -1,4 +1,4 @@
-**学习Ruby，平时的一些小实例**
+**学习Ruby，平时的脚本实例**
 ---
 * [class_all.rb](https://github.com/myvary/Ruby_Learn/blob/master/class_all.rb) 累积一些总是用到的公共类
 * [/cj /my_script.rb](https://github.com/myvary/Ruby_Learn/blob/master/cj/my_script.rb) 长江学者页面抓取，并放入CSV文档里
