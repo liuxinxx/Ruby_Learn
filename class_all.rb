@@ -13,7 +13,7 @@ class DOW
       html = agent.get(url)
       return html
     rescue Exception=> e
-      puts "出现异常:"+e.message
+      puts "出现异常:"+e.message+"#{url}该链接无法抓取"
       return "0"
     end
   end
