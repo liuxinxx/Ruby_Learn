@@ -1,4 +1,4 @@
-**学习Ruby，平时的脚本实例**
+**学习Ruby的脚本实例**
 ---
 * [class_all.rb](https://github.com/myvary/Ruby_Learn/blob/master/class_all.rb) 累积一些总是用到的公共类
 * [/cj /my_script.rb](https://github.com/myvary/Ruby_Learn/blob/master/cj/my_script.rb) 长江学者页面抓取，并放入CSV文档里
@@ -8,4 +8,4 @@
 * [/luxun/lx.rb](https://github.com/myvary/Ruby_Learn/blob/master/luxun/lx.rb)历届鲁迅文学奖
 * [/meihuajiang/mx.rb](https://github.com/myvary/Ruby_Learn/blob/master/meihuajiang/mx.rb)历届梅花奖
 * [/jinzhongjiang/jz.rb](https://github.com/myvary/Ruby_Learn/blob/master/jinzhongjiang/jz.rb)历届金钟奖
-* [/yinhang/yh.rb](https://github.com/myvary/Ruby_Learn/blob/master/yinhuang/yh.rb)国内银行业金融机构
+* [/yinhang/yh.rb](https://github.com/myvary/Ruby_Learn/blob/master/yinhuang/yh.rb)国内银行业金融机构 
