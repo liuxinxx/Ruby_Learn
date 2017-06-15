@@ -9,3 +9,4 @@
 * [/meihuajiang/mx.rb](https://github.com/myvary/Ruby_Learn/blob/master/meihuajiang/mx.rb)历届梅花奖
 * [/jinzhongjiang/jz.rb](https://github.com/myvary/Ruby_Learn/blob/master/jinzhongjiang/jz.rb)历届金钟奖
 * [/yinhang/yh.rb](https://github.com/myvary/Ruby_Learn/blob/master/yinhuang/yh.rb)国内银行业金融机构 
+* [/ad/ad.rb](https://github.com/myvary/Ruby_Learn/blob/master/ad/ad.rb)大广奖
