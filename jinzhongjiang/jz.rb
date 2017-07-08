@@ -183,10 +183,10 @@ def jiexi(html, file, infobox)
     end
   end
 end
-file1 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/zjs-1.csv", 'a+')
-file2 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/zjs-2.csv", 'a+')
-file3 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/zjs-3.csv", 'a+')
-file4 = File.new("/media/liuxin/python/Ruby/RubymineProjects/jaj/zjs-4.csv", 'a+')
+file1 = File.new("/Users/liuxin/RubymineProjects/github/Ruby_Learn/jinzhongjiang/jaj/zjs-1.csv", 'a+')
+file2 = File.new("/Users/liuxin/RubymineProjects/github/Ruby_Learn/jinzhongjiang/jaj/zjs-2.csv", 'a+')
+file3 = File.new("/Users/liuxin/RubymineProjects/github/Ruby_Learn/jinzhongjiang/jaj/zjs-3.csv", 'a+')
+file4 = File.new("/Users/liuxin/RubymineProjects/github/Ruby_Learn/jinzhongjiang/jaj/zjs-4.csv", 'a+')
 (1..51).each do |n|
   url = 'https://zh.wikipedia.org/zh-cn/'
   str = '第'+n.to_s+'屆金鐘獎'

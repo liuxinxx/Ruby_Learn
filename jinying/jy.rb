@@ -95,7 +95,8 @@ url = 'http://www.ctaa.org.cn/a/jinyingjiang/'
 main_url(url).each do |key,vol|
   @number-=1
   pc = ''
-  file =  File.new('/media/liuxin/python/Ruby/RubymineProjects/jinying/ssdd.csv','a+')
+  # /Users/liuxin/RubymineProjects/github/Ruby_Learn/jinying
+  file =  File.new('/Users/liuxin/RubymineProjects/github/Ruby_Learn/jinying/ssdd.csv','a+')
   if key =~/^(第.*届)大|^(第.*届)中/
     pc = $1 || $2
   end

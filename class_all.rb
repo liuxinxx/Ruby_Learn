@@ -3,7 +3,6 @@ require 'mechanize'
 require 'rubygems'
 require 'net/http'
 require 'open-uri'
-require 'watir'
 class DOW
   public
   def download_html(url)
@@ -17,12 +16,12 @@ class DOW
       return "0"
     end
   end
-  def download(url)
-    b = Watir::Browser.new(:chrome)
-    # b = Watir::Browser.new(:phantomjs)
-    b.goto(url)
-    return  b.html
-  end
+  # def download(url)
+  #   b = Watir::Browser.new(:chrome)
+  #   # b = Watir::Browser.new(:phantomjs)
+  #   b.goto(url)
+  #   return  b.html
+  # end
   def download_proxy(url)
     begin
       $proxy_addr = '113.69.38.106'
