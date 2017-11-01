@@ -12,4 +12,4 @@ sudo htpasswd  -c  /etc/squid3/passwd  mc_proxy
 echo mancao
 echo mancao
 sudo squid3 -k reconfigur
-sudo service  squid3  restart
+sudo service squid3 restart
