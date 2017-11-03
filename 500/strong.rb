@@ -1,1 +1,0 @@
-require '../class_all'

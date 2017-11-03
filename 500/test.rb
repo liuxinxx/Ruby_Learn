@@ -22,23 +22,34 @@ class US500
     list
   end
   def jiexi_next_page(url)
-    html = @dow.download_html(url)
-    html.links.each do |link|
-      puts link.text,link.href
+    html = @dow.download_html('http://www.fortunechina.com/fortune500/c/2012-05/07/content_98690.htm')
+
+    while(true)
+       f = 0
+      html.links.each do |link|
+        if link.text=~/下一页/
+          f= 1
+          puts link.text,'----->',link.href
+          html = @dow.download_html('http://www.fortunechina.com/fortune500/c/2012-05/07/'+link.href)
+        end
+      end
+      if f ==0
+        break
+      end
     end
   end
-  def jiexi(list)
-    year = ''
+  def jiexi(fileName,url)
+
+  end
+  def jiexi_list(list)
      list.each do |key,vol|
        p key,vol
-        if key =~/[0-9].*年/
-          year = $&
-        end
-     file = File.open('all'+'.csv','ab+')
+
+     file = File.open(key+'.csv','ab+')
     html = @dow.download_html(vol)
     html.links.each do |link|
-      if link=~/下一页/
-          puts link.text,link.href
+      if link.text=~/下一页/
+         puts link.text,link.href
       end
     end
     html.xpath('//*[@id="leftdiv"]/div/div/table').each do |tr|
@@ -50,8 +61,8 @@ class US500
             jiexi_next_page(vol)
         else
         if text=~/[0-9]/ 
-          puts text[1,text.length].gsub(",",'，').gsub("\n",',')
-          file.syswrite(year+','+text[1,text.length].gsub(",",'，').gsub("\n",',')+"\n")
+          # puts text[1,text.length].gsub(",",'，').gsub("\n",',')
+          # file.syswrite(text[1,text.length].gsub(",",'，').gsub("\n",',')+"\n")
         end
           end
         end
@@ -61,5 +72,7 @@ class US500
   end
 url = 'http://www.fortunechina.com/fortune500/node_67.htm'
 us = US500.new
-list = us.parse(url)
-us.jiexi(list)
+# list = us.parse(url)
+
+# us.jiexi(list)
+us.jiexi_next_page('qwe')
